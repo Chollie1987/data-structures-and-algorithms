@@ -95,7 +95,9 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  //write function that takes in an array and value
+  
+  //push the value into the array
 };
 
 const addNumbers = (num, arr, times, callback) => {
