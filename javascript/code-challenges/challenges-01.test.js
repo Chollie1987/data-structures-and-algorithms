@@ -96,7 +96,9 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   //write function that takes in an array and value
-  
+  const newArr = [];
+  arr.push(value(newArr));
+
   //push the value into the array
 };
 
