@@ -22,7 +22,11 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  const newArr = [];
+  arr.forEach(str => {
+    newArr.push(callback(str));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,9 +38,9 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  const newArr = [];
-  arr.sort((a, b) => a.name.toUpperCase() - b.name.toUpperCase());
-  return newArr;
+
+  arr.sort((a, b) => a - b);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,6 +55,7 @@ const sortNumbers = (arr) => {
   arr.sort((a, b) => {
     return a - b;
   });
+  return arr;// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +70,7 @@ const sortBackwards = (arr) => {
   arr.sort((a, b) => {
     return b - a;
   });
+  return arr;// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,7 +84,8 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,8 +102,9 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => a.price - b.price);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -218,7 +226,7 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-03.test.js
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return an array of uppercase animal names', () => {
     const arr = ['BeAr', 'lIon'];
     expect(updateAnimal(arr, upper)[0]).toStrictEqual('BEAR');
@@ -254,7 +262,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should sort strings alphabetically', () => {
     expect(alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot'])).toStrictEqual(['Alphabet', 'Zebra', 'alphabet', 'carrot']);
     expect(alphabetize(['alphabet', 'Alphabet', 'carrot'])).toStrictEqual(['Alphabet', 'alphabet', 'carrot']);
@@ -262,7 +270,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should sort items by their price', () => {
     expect(sortByPrice([
       { name: 'Sweatshirt', price: 45 },
