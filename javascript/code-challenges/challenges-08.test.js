@@ -103,8 +103,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  const str = /\bworld\b/;
-  return str.test(input.toString().toLowerCase());
+  const pattern = /world/;
+  return pattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,8 +116,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  const word = /\b[A-Z]\b/g;
-  return str.match(word);
+  const pattern = /[A-Z][a-z]*/;
+  const words = str.match(pattern);
+  return words;
 };
 
 /* ------------------------------------------------------------------------------------------------
