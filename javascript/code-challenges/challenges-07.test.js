@@ -25,7 +25,7 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  starWarsArr.sort((a,b) => {
+  starWarsArr.sort((a, b) => {
     return b.height - a.height;
   });
   return starWarsArr;
@@ -38,7 +38,7 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  arr.splice(idx,3);
+  arr.splice(idx, 3);
   return arr;
 };
 
@@ -130,8 +130,8 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  for (let i = 0; i < recipe.ingredients.length; i++){
-    
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+
   }
   return result;
 };
