@@ -94,16 +94,15 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
-  //write function that takes in an array and value
-  const newArr = [];
-  arr.push(value(newArr));
-
-  //push the value into the array
+const addValues = (arr, value) => 
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,7 +124,14 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  const groceryList = [];
+
+  availableItems.forEach((item) => {
+    if (item.available) {
+      groceryList.push(item.name);
+    }
+  });
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -181,14 +187,14 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {
