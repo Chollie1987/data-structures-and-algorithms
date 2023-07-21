@@ -1,6 +1,6 @@
 # Linked List
 
 ## Christina Hollie
-**visual whiteboard methods**
 
+**Visual whiteboard methods**
 ![figmaLLvisual](Screenshot%20(96).png)
