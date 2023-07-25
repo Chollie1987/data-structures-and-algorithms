@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class Node {
   constructor(value, next = null) {
@@ -50,16 +50,16 @@ class LinkedList {
   // toString
   // "{ a } -> { b } -> { c } -> NULL"
   toString() {
-    if (!this.head) return 'NULL';
+    if (!this.head) return "NULL";
     let current = this.head;
-    let returnStr = '';
+    let returnStr = "";
     while (current) {
       // look at the node.value "{ a } -> "
       returnStr += `{ ${current.value} } -> `;
       current = current.next;
     }
     // once we exit the loop we need to tack NULL on to the end
-    returnStr += 'NULL';
+    returnStr += "NULL";
     return returnStr;
   }
 
@@ -112,6 +112,24 @@ class LinkedList {
         current = current.next;
       }
     }
+  }
+
+  kthFromEnd(k) {
+    let length = 0;
+    let num;
+    let current = this.head;
+    while (current) {
+      length++;
+      current = current.next;
+    }
+    num = length - k;
+    current = this.head;
+    while (num >= 0) {
+      if (!num) return current.value;
+      num--;
+      current = current.next;
+    }
+    return null;
   }
 }
 
