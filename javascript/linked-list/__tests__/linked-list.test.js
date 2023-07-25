@@ -68,6 +68,26 @@ describe('linked list test suite', () => {
       '{0} -> { a } -> { 1 } -> { b } -> { c } -> { d } -> { 3 } -> NULL'
     );
   });
+  test('Where k is greater than the length of the linked list', () => {
+    const testKGreaterLength = new LinkedList(dummyLL);
+    testKGreaterLength.
+
+  });
+   test('Where k and the length of the list are the same', () => {
+    const testKSameListLeng= new LinkedList(dummyLL);
+    testKSameListLeng.
+
+  });
+   test('Where k is not a positive integer', () => {
+    const testNegNum = new LinkedList(dummyLL);
+    testNegNum.
+
+  });
+   test('Where the linked list is the size of one node', () => {
+    const testLLOneNode = new LinkedList(dummyLL);
+    testLLOneNode.
+
+  });
 });
 
 // 'use strict';

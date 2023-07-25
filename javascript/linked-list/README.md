@@ -10,3 +10,7 @@
 
 **close up of code**
 ![figmaLLvisual](Screenshot%20(105).png)
+
+**kth value**
+
+![figmaLLKthvisual](Screenshot%20(113).png)
