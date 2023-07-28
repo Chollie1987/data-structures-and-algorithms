@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 class Node {
   constructor(value, next = null) {
@@ -50,16 +50,16 @@ class LinkedList {
   // toString
   // "{ a } -> { b } -> { c } -> NULL"
   toString() {
-    if (!this.head) return "NULL";
+    if (!this.head) return 'NULL';
     let current = this.head;
-    let returnStr = "";
+    let returnStr = '';
     while (current) {
       // look at the node.value "{ a } -> "
       returnStr += `{ ${current.value} } -> `;
       current = current.next;
     }
     // once we exit the loop we need to tack NULL on to the end
-    returnStr += "NULL";
+    returnStr += 'NULL';
     return returnStr;
   }
 
@@ -130,6 +130,24 @@ class LinkedList {
       current = current.next;
     }
     return null;
+  }
+  zipList(list1, list2) {
+    if (!list1) return list2;
+    if (!list2) return list1;
+
+    let headOne = list1;
+    let headTwo = list2;
+
+    while (headOne && headTwo) {
+      const LLOne = headOne.next;
+      headOne.next = headTwo;
+      headOne = LLOne;
+
+      const LLTwo = headTwo.next;
+      headTwo.next = headOne;
+      headTwo = LLTwo;
+    }
+    return list1;
   }
 }
 
