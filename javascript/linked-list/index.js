@@ -11,6 +11,12 @@ class LinkedList {
   constructor(head = null) {
     this.head = head;
   }
+}
+class Stack {
+  constructor() {
+    this.items = [];
+    this.top = null;
+  }
 
   traversalCheatSheet() {
     let current = this.head;
@@ -149,6 +155,29 @@ class LinkedList {
     }
     return list1;
   }
+
+  isEmpty() {
+    return this.top === null;
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+    newNode.next = this.top;
+    this.top = newNode;
+  }
+
+  pop() {
+    const current = top;
+    let top = current.next;
+    current.next = null;
+    return current;
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return this.top.value;
+    }
+  }
 }
 
-module.exports = { LinkedList, Node };
+module.exports = { LinkedList, Node, Stack };
