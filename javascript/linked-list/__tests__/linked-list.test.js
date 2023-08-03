@@ -74,7 +74,7 @@ describe('linked list test suite', () => {
 
   });
    test('Where k and the length of the list are the same', () => {
-    const testKSameListLeng= new LinkedList(dummyLL);
+    const testKSameListLeng = new LinkedList(dummyLL);
     testKSameListLeng.
 
   });
