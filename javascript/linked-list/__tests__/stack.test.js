@@ -1,4 +1,4 @@
-const Stack = require('../stack.js');
+const Stack = require('../stack-and-queue.js');
 
 describe('Tests all stack methods', () => {
   test('Can successfully push onto a stack', () => {
