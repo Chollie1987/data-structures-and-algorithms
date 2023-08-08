@@ -10,6 +10,13 @@ class Stack {
   constructor(top = null) {
     this.top = top;
   }
+}
+
+class Queue {
+  constructor(front = null) {
+    this.front = front;
+    this.rear = null;
+  }
 
   toString() {
     if (!this.top) return 'NULL';
@@ -44,5 +51,25 @@ class Stack {
       return this.top.value;
     }
   }
+
+  enqueue(val) {
+    const newNode = new Node(val);
+
+    if (this.isEmpty()) {
+      this.front = newNode;
+      this.rear = newNode;
+      return;
+    }
+    this.rear.next = newNode;
+    this.rear = newNode;
+  }
+
+  dequeue() {
+    if (this.isEmpty()) throw new Error('no front');
+    const current = this.front;
+    this.front = current.next;
+    current.next = null;
+    return current;
+  }
 }
-module.exports = { Node, Stack };
+module.exports = { Node, Stack, Queue };
