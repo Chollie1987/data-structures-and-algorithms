@@ -13,3 +13,6 @@
 
 **kth value**
 ![figmaLLKthvisual](Screenshot%20(113).png)
+
+**stack and queue animal shelter**
+![figmaStackAndQueueAnimalShelter](./images/Screenshot%20(124).png)
