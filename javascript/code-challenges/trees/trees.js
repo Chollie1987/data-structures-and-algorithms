@@ -1,6 +1,6 @@
-class Node TreeNode {
+class TreeNode {
   constructor(value, left = null, right = null) {
-    this.value = value = value;
+    this.value = value;
     this.left = left;
     this.right = right;
   }
@@ -13,7 +13,7 @@ class BinTree {
 
 
   preOrder(node) {
-    console.log(node.value)
+    console.log(node.value);
     if (node.left) {
       this.preOrder(node.left);
     }
@@ -42,14 +42,14 @@ class BinSearchTree extends BinTree {
     // no root in whole tree
     let newNode = new TreeNode(number);
     if (!this.root) {
-      this.root = newNode
+      this.root = newNode;
       return;
     }
 
     if (number === node.value) return;
 
     if (number < node.value) {
-      if  (node.left) this.add(number, node.left);
+      if (node.left) this.add(number, node.left);
       else {
         node.left = newNode;
         return;
@@ -63,7 +63,22 @@ class BinSearchTree extends BinTree {
         return;
       }
     }
+
+
+  maxValue(node) {
+    if (!node) {
+    return null;
+ }
+   const leftMax = this.maxValue(node.left);
+   const rightMax = this.maxValue(node.right);
+
+   if (leftMax === null && rightMax === null) {
+   return node.value;
+  } else {
+   return Math.ceil(node.value, leftMax, rightMax);
+      }
+    }
   }
 }
 
-module.exports = {Node, BinSearchTree, BinTree};
+module.exports = {TreeNode, BinSearchTree, BinTree};
