@@ -65,8 +65,8 @@ class BinSearchTree extends BinTree {
     }
 
 
-  maxValue(node) {
-    if (!node) {
+  maxValue(node){
+    if (!node)
     return null;
  }
    const leftMax = this.maxValue(node.left);
@@ -79,6 +79,6 @@ class BinSearchTree extends BinTree {
       }
     }
   }
-}
+
 
 module.exports = {TreeNode, BinSearchTree, BinTree};
