@@ -25,7 +25,7 @@ class BinTree {
   }
 
   inOrder(node) {
-    
+
   }
 
   postOrder(node) {
