@@ -38,11 +38,9 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-
-  arr.sort((a, b) => a - b);
+  arr.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
