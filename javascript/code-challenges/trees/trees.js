@@ -7,30 +7,25 @@ class TreeNode {
 }
 
 class BinTree {
-  constructor(root = null){
+  constructor(root = null) {
     this.root = root;
   }
-
 
   preOrder(node) {
     console.log(node.value);
     if (node.left) {
       this.preOrder(node.left);
     }
-    if(node.right) {
+    if (node.right) {
       this.preOrder(node.right);
     }
 
     return;
   }
 
-  inOrder(node) {
+  // inOrder(node) {}
 
-  }
-
-  postOrder(node) {
-
-  }
+  // postOrder(node) {}
 }
 
 class BinSearchTree extends BinTree {
@@ -63,22 +58,43 @@ class BinSearchTree extends BinTree {
         return;
       }
     }
+  }
 
+  maxValue(node) {
+    if (!node) return null;
 
-  maxValue(node){
-    if (!node)
-    return null;
- }
-   const leftMax = this.maxValue(node.left);
-   const rightMax = this.maxValue(node.right);
+    const leftMax = this.maxValue(node.left);
+    const rightMax = this.maxValue(node.right);
 
-   if (leftMax === null && rightMax === null) {
-   return node.value;
-  } else {
-   return Math.ceil(node.value, leftMax, rightMax);
-      }
+    if (leftMax === null && rightMax === null) {
+      return node.value;
+    } else {
+      return Math.ceil(node.value, leftMax, rightMax);
     }
   }
 
+  breadthFirst(tree) {
+    if (!tree) {
+      return[];
+    }
 
-module.exports = {TreeNode, BinSearchTree, BinTree};
+    const result = [];
+    const queue = [tree];
+
+    while (queue.length > 0) {
+      const node = queue.shift();
+      result.push(node.value);
+
+      if (node.left) {
+        queue.push(node.left);
+      }
+      if (node.right) {
+        queue.push(node.right);
+      }
+    }
+
+    return result;
+  }
+}
+
+module.exports = { TreeNode, BinSearchTree, BinTree };
