@@ -6,6 +6,13 @@ class TreeNode {
   }
 }
 
+class NewTreeNode {
+  constructor(valuel) {
+    this.value = value;
+    this.children = [];
+  }
+}
+
 class BinTree {
   constructor(root = null) {
     this.root = root;
@@ -95,6 +102,25 @@ class BinSearchTree extends BinTree {
 
     return result;
   }
+
+
+fizzBuzzTree(root) {
+  if (!root) {
+  return null;
+  }
+
+  const newRoot = new TreeNode();
+
+traverse(oldNode, newNode) {
+    if ( oldNode.value % 3 === 0 && oldNode.value % 5 === 0) {
+  newNode.value = 'FizzBuzz';
+  } else if (oldNode.value % 3 === 0) {
+  newNode.value = 'Fizz';
+  } else if (oldNode.value % 5 === 0) {
+  newNode.value = oldNode.value.toString();
+  }
+  return newRoot;
+  }
 }
 
-module.exports = { TreeNode, BinSearchTree, BinTree };
+module.exports = { TreeNode, NewTreeNode, BinSearchTree, BinTree };
