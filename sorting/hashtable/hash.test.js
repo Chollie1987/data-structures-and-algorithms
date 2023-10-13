@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom";
 const Hashtable = require('../hashtable/hash');
 
 describe('Hashtable', () => {
