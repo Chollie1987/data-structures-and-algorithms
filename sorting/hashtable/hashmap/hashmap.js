@@ -9,4 +9,8 @@ function duplicate(str) {
     if (map[word]) return word;
     else map[word] = true;
   };
+
+  return undefined;
 };
+
+module.exports = duplicate;
