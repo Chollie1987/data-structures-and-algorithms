@@ -1,4 +1,4 @@
-const Graph = require("./graph");
+const Graph = require("./graphs");
 
 describe("graph implementation", () => {
   test("we can add verticies", () => {
