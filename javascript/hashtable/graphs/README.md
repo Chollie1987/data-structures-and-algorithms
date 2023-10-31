@@ -15,3 +15,7 @@
 **Tests**
 
 - Test created functions and implementation.
+
+**Breadth-First Traversal**
+
+[!figmaWhiteboardBreadthFirstTraversal](./Screenshot%20(147).png)
