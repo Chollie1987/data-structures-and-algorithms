@@ -19,3 +19,6 @@
 **Breadth-First Traversal**
 
 [!figmaWhiteboardBreadthFirstTraversal](./Screenshot%20(147).png)
+
+**Binary Tree code challenge**
+[!figmaOfCodeChallenge](./Screenshot%20(148).png)
