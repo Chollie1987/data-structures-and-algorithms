@@ -22,3 +22,6 @@
 
 **Binary Tree code challenge**
 [!figmaOfCodeChallenge](./Screenshot%20(148).png)
+
+**Depth First Graph Traversal**
+[!figmaOfCodeChallenge](./Screenshot%20(149).png)

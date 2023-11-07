@@ -45,4 +45,43 @@ describe("graph implementation", () => {
     myGraph.addVertex(2);
     expect(myGraph.size()).toBe(2);
   });
+  describe('Graph', () => {
+    test('Graph Initialization', () => {
+        const myGraph = new Graph();
+        myGraph.addEdge('A', ['B', 'C']);
+        myGraph.addEdge('B', ['D', 'E']);
+        myGraph.addEdge('C', ['F']);
+        myGraph.addEdge('D', []);
+        myGraph.addEdge('E', ['F']);
+        myGraph.addEdge('F', []);
+
+        const expectedGraph = {
+            'A': ['B', 'C'],
+            'B': ['D', 'E'],
+            'C': ['F'],
+            'D': [],
+            'E': ['F'],
+            'F': [],
+        };
+         expect(myGraph.graph).toEqual(expectedGraph);
+    });
+});
+describe('Graph', () => {
+    test('Depth First Traversal', () => {
+        const myGraph = new Graph();
+        myGraph.addEdge('A', ['B', 'C']);
+        myGraph.addEdge('B', ['D', 'E']);
+        myGraph.addEdge('C', ['F']);
+        myGraph.addEdge('D', []);
+        myGraph.addEdge('E', ['F']);
+        myGraph.addEdge('F', []);
+
+        const resultCollection = myGraph.depthFirst('A');
+
+      
+        const expectedResult = ['A', 'B', 'D', 'E', 'F', 'C'];
+
+        expect(resultCollection).toEqual(expectedResult);
+        });
+});
 });

@@ -109,6 +109,28 @@ console.log(visited.map(node => node.value));
   return visited;
 }
 
+ depthFirst(rootNode) {
+   const visited = new Set();
+   const result = [];
+   const stack = [rootNode];
+
+   while (stack.length > 0) {
+     const currentNode = stack.pop();
+
+     if(!visited.has(currentNode)) {
+       visited.add(currentNode);
+       result.push(currentNode);
+
+       const neighbors = this.graph[currentNode];
+
+       for (let i = neighbors.length - 1; i >= 0; i--) {
+         stack.push(neighbors[i]);
+       }
+     }
+   }
+   return result;
+ }
+
 }
 
 module.exports = Graph;
